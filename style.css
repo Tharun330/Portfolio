@@ -1,4 +1,4 @@
-/* Page-1 CSS Code */
+/* Page-1 CSS Code for WebView */
 /* START */
 .main {
     margin: 0px;
@@ -252,6 +252,106 @@ div #sidebar li{
 
 
 /* END */
+
+/* Page-2 CSS code for WebView */
+.box2{
+    height: 95vh;
+    width: 99%;
+    margin-top: 1rem;
+    display: flexbox;
+
+
+    border: 1px black;
+    border-radius: 20px;
+    background-color: #f3f3f3;
+    box-shadow: 2px 4px 8px black;
+    transition: .2s;
+    /* justify-content: center;
+    align-items: center; */
+}
+
+.section_one{
+    height: 95vh;
+    width: 30%;
+    /* border: 2px solid black; */
+    flex: flex;
+    justify-items: center;
+    
+    
+}
+.card_one{
+    height: 300px;
+    width: 220px;
+    border: 2px solid black;
+    background-color: black;
+    border-radius: 20px;
+    margin-left: 20px;
+    margin-top: 10px;
+    transition: 1s;
+    color: white;
+    overflow: hidden;
+    font-size: 0%;
+   
+}
+.card_one h1{
+    font-size: medium;
+    transition: 1s;
+
+}
+#label {
+    color: #f3f3f3;
+    font-size: 100%;
+}
+
+.card_two {
+    height: 300px;
+    width: 220px;
+    border: 2px solid black;
+    background-color:#343434 ;
+    border-radius: 20px;
+    position: relative;
+    top: -230px;
+    left: 70px;
+    overflow: hidden;
+
+}
+.card_three {
+    height: 300px;
+    width: 220px;
+    border: 2px solid black;
+    background-color:#343434 ;
+    border-radius: 20px;
+    position: relative;
+    top: -460px;
+    left: 120px;
+    overflow: hidden;
+
+}
+.card_four {
+    height: 300px;
+    width: 220px;
+    border: 2px solid black;
+    background-color:#343434 ;
+    border-radius: 20px;
+    position: relative;
+    top: -670px;
+    left: 180px;
+    overflow: hidden;
+
+}
+
+.big_card{
+    height: 500px;
+    width: 800px;
+    border: 2px solid black;
+    background-color: black;
+    border-radius: 20px;
+    margin-left: 500px;
+    margin-top: 50px;
+    color: white;
+    font-size: 100%;
+
+}
 
 /* Page-1 CSS code for mobile view */
 /* START */
