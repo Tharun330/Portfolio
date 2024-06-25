@@ -5,6 +5,7 @@ let ballHeading = document.querySelector("#ballOne h2");
 let closeBtn = document.querySelector(".closeButton");
 let closeBtnTwo = document.querySelector("#ballTwoClose");
 let closeBtnThree = document.querySelector("#ballThreeClose");
+let invisibleText = document.querySelector(".invisibleText");
 
 
 
@@ -15,23 +16,39 @@ let ballTwo = document.querySelector("#ballTwo");
 let ballThree = document.querySelector("#ballThree");
 
 let speed = 3.6;
-let speedTwo ;
-let speedThree ;
+let speedTwo;
+let speedThree;
 
-   
+
+setTimeout(() => {
+
+    ballBox.addEventListener('mouseenter', () => {
+        ballBox.classList.add("openScreen");
+        console.log("screen blacked");
+        invisibleText.classList.add("visibleText");
+
+
+        setTimeout(() => {
+            ballBox.classList.remove("openScreen");
+            invisibleText.classList.remove("visibleText");
+        }, 2000);
+    },{once: true})
+}, 2000);
+
+
 
 
 
 //CLICK EVENT TO EXPAND THE BALLONE AND SHOW THE CONTENT
-ballOne.addEventListener('click', () =>{
+ballOne.addEventListener('click', () => {
     console.log(`ball clicked`);
 
     ballExpand(ballOne);
-    ballsHidden(ballTwo,ballThree);
+    ballsHidden(ballTwo, ballThree);
     console.log("expanded");
     clearInterval();
-  
-    
+
+
     speed = 0;
     speedTwo = 0;
     speedThree = 0;
@@ -39,30 +56,30 @@ ballOne.addEventListener('click', () =>{
 })
 
 //CLICK EVENT TO CLOSE THE EXPANDED BLOCK AND COME BACK TO BALLONE SHAPE
-closeBtn.addEventListener('click', (evt) =>{
+closeBtn.addEventListener('click', (evt) => {
     evt.stopPropagation();
     console.log("x clicked")
 
     originalShape();
 
-    speed = 3.6 ;
+    speed = 3.6;
     speedTwo = 4;
     speedThree = 3;
-    
-    
+
+
 })
 
 
 //CLICK EVENT TO EXPAND THE BALLTWO AND SHOW THE CONTENT
-ballTwo.addEventListener('click', () =>{
+ballTwo.addEventListener('click', () => {
     console.log(`ballTwo clicked`);
 
     ballExpand(ballTwo);
-    ballsHidden(ballOne,ballThree);
+    ballsHidden(ballOne, ballThree);
     console.log("expanded");
     clearInterval();
-  
-    
+
+
     speed = 0;
     speedTwo = 0;
     speedThree = 0;
@@ -70,29 +87,29 @@ ballTwo.addEventListener('click', () =>{
 })
 
 //CLICK EVENT TO CLOSE THE EXPANDED BLOCK AND COME BACK TO BALLTWO SHAPE
-closeBtnTwo.addEventListener('click', (evt) =>{
+closeBtnTwo.addEventListener('click', (evt) => {
     evt.stopPropagation();
     console.log("x clicked")
 
     originalShape();
 
-    speed = 3.6 ;
+    speed = 3.6;
     speedTwo = 4;
     speedThree = 3;
-    
-    
+
+
 })
 
 //CLICK EVENT TO EXPAND THE BALLTHREE AND SHOW THE CONTENT
-ballThree.addEventListener('click', () =>{
+ballThree.addEventListener('click', () => {
     console.log(`ballTwo clicked`);
 
     ballExpand(ballThree);
-    ballsHidden(ballOne,ballTwo);
+    ballsHidden(ballOne, ballTwo);
     console.log("expanded");
     clearInterval();
-  
-    
+
+
     speed = 0;
     speedTwo = 0;
     speedThree = 0;
@@ -100,41 +117,41 @@ ballThree.addEventListener('click', () =>{
 })
 
 //CLICK EVENT TO CLOSE THE EXPANDED BLOCK AND COME BACK TO BALLTHREE SHAPE
-closeBtnThree.addEventListener('click', (evt) =>{
+closeBtnThree.addEventListener('click', (evt) => {
     evt.stopPropagation();
     console.log("x clicked")
 
     originalShape();
 
-    speed = 3.6 ;
+    speed = 3.6;
     speedTwo = 4;
     speedThree = 3;
-    
-    
+
+
 })
 
 
 
 
 //FUCNTION TO EXPAND THE BALL
-function ballExpand(ball){
+function ballExpand(ball) {
     ball.setAttribute("class", "big_card");
     ballHeading.classList.add("info_head");
 }
 
 //FUNCTION TO RESHAPE TO BALL
-function originalShape(){
-    ballOne.setAttribute("class","ball");
-    ballTwo.setAttribute("class","ball");
-    ballThree.setAttribute("class","ball");
+function originalShape() {
+    ballOne.setAttribute("class", "ball");
+    ballTwo.setAttribute("class", "ball");
+    ballThree.setAttribute("class", "ball");
 }
 
 
 //FUNCTION TO HIDDEN THE BALLS WHEN ONE BALL EXPANDED
-function ballsHidden(ballX,ballY){
+function ballsHidden(ballX, ballY) {
 
-    ballX.setAttribute("class","ballHidden");
-    ballY.setAttribute("class","ballHidden");
+    ballX.setAttribute("class", "ballHidden");
+    ballY.setAttribute("class", "ballHidden");
     console.log("balls hided");
 }
 
@@ -150,42 +167,42 @@ let up = upDown ? true : false;
 //Bouncing BallOne MOVEMENT script code
 //SETINTERVAL FUNCTION FOR BALL MOVEMENT
 start();
-function start(){
- setInterval(() => {
+function start() {
+    setInterval(() => {
 
 
         let ballBounds = ballOne.getBoundingClientRect();
         let borderBounds = ballBox.getBoundingClientRect();
-    
+
         let ballBoundsLeft = parseInt(ballBounds.left);
         let ballBoundsRight = parseInt(ballBounds.right);
         let ballBoundsTop = parseInt(ballBounds.top);
         let ballBoundsButtom = parseInt(ballBounds.bottom);
-    
+
         let ballTop = Math.floor(parseInt(window.getComputedStyle(ballOne).getPropertyValue("top")));
         let ballLeft = Math.floor(parseInt(window.getComputedStyle(ballOne).getPropertyValue("left")));
-    
+
         if (right && up) {
-    
+
             ballOne.style.top = ballTop - speed + "px";
             ballOne.style.left = ballLeft + speed + "px";
         }
         if (!right && up) {
-    
+
             ballOne.style.top = ballTop - speed + "px";
             ballOne.style.left = ballLeft - speed + "px";
         }
         if (right && !up) {
-    
+
             ballOne.style.top = ballTop + speed + "px";
             ballOne.style.left = ballLeft + speed + "px";
         }
         if (!right && !up) {
-    
+
             ballOne.style.top = ballTop + speed + "px";
             ballOne.style.left = ballLeft - speed + "px";
         }
-    
+
         if (ballBoundsTop <= borderBounds.top) {
             leftRight = Math.floor(Math.random() * 2);
             right = leftRight ? true : false;
@@ -198,15 +215,15 @@ function start(){
         }
         if (ballBoundsRight >= borderBounds.right) {
             right = false;
-             upDown = Math.floor(Math.random() * 2);
-             up = upDown ? true : false;
+            upDown = Math.floor(Math.random() * 2);
+            up = upDown ? true : false;
         }
         if (ballBoundsLeft <= borderBounds.left) {
             right = true;
-             upDown = Math.floor(Math.random() * 2);
-             up = upDown ? true : false;
+            upDown = Math.floor(Math.random() * 2);
+            up = upDown ? true : false;
         }
-    
+
     }, 20)
 }
 
@@ -221,49 +238,49 @@ let upDownBallTwo = Math.floor(Math.random() * 2);
 let upBallTwo = upDownBallTwo ? true : false;
 
 startTwo();
-function startTwo(){
- setInterval(() => {
+function startTwo() {
+    setInterval(() => {
 
 
         let ballBounds = ballTwo.getBoundingClientRect();
         let borderBounds = ballBox.getBoundingClientRect();
-    
+
         let ballBoundsLeft = parseInt(ballBounds.left);
         let ballBoundsRight = parseInt(ballBounds.right);
         let ballBoundsTop = parseInt(ballBounds.top);
         let ballBoundsButtom = parseInt(ballBounds.bottom);
-    
+
         let ballTop = Math.floor(parseInt(window.getComputedStyle(ballTwo).getPropertyValue("top")));
         let ballLeft = Math.floor(parseInt(window.getComputedStyle(ballTwo).getPropertyValue("left")));
-    
+
         if (rightBallTwo && upBallTwo) {
-    
+
             ballTwo.style.top = ballTop - speedTwo + "px";
             ballTwo.style.left = ballLeft + speedTwo + "px";
         }
         if (!rightBallTwo && upBallTwo) {
-    
+
             ballTwo.style.top = ballTop - speedTwo + "px";
             ballTwo.style.left = ballLeft - speedTwo + "px";
         }
         if (rightBallTwo && !upBallTwo) {
-    
+
             ballTwo.style.top = ballTop + speedTwo + "px";
             ballTwo.style.left = ballLeft + speedTwo + "px";
         }
         if (!rightBallTwo && !upBallTwo) {
-    
+
             ballTwo.style.top = ballTop + speedTwo + "px";
             ballTwo.style.left = ballLeft - speedTwo + "px";
         }
-    
+
         if (ballBoundsTop <= borderBounds.top) {
             leftRightBallTwo = Math.floor(Math.random() * 2);
             rightBallTwo = leftRightBallTwo ? true : false;
             upBallTwo = false;
         }
         if (ballBoundsButtom >= borderBounds.bottom) {
-            leftRightBallTwo = Math.floor(Math.random() * 2)+1;
+            leftRightBallTwo = Math.floor(Math.random() * 2) + 1;
             rightBallTwo = leftRightBallTwo ? true : false;
             upBallTwo = true;
         }
@@ -277,7 +294,7 @@ function startTwo(){
             upDownBallTwo = Math.floor(Math.random() * 2);
             upBallTwo = upDownBallTwo ? true : false;
         }
-    
+
     }, 20)
 }
 
@@ -285,7 +302,7 @@ function startTwo(){
 
 
 //BALL THREE MOVEMENT CODE
- speedThree = 3;
+speedThree = 3;
 let leftRightBallThree = Math.floor(Math.random() * 2);
 let rightBallThree = leftRightBallThree ? true : false;
 
@@ -294,49 +311,49 @@ let upBallThree = upDownBallThree ? true : false;
 
 
 startThree();
-function startThree(){
- setInterval(() => {
+function startThree() {
+    setInterval(() => {
 
 
         let ballBounds = ballThree.getBoundingClientRect();
         let borderBounds = ballBox.getBoundingClientRect();
-    
+
         let ballBoundsLeft = parseInt(ballBounds.left);
         let ballBoundsRight = parseInt(ballBounds.right);
         let ballBoundsTop = parseInt(ballBounds.top);
         let ballBoundsButtom = parseInt(ballBounds.bottom);
-    
+
         let ballTop = Math.floor(parseInt(window.getComputedStyle(ballThree).getPropertyValue("top")));
         let ballLeft = Math.floor(parseInt(window.getComputedStyle(ballThree).getPropertyValue("left")));
-    
+
         if (rightBallThree && upBallThree) {
-    
+
             ballThree.style.top = ballTop - speedThree + "px";
             ballThree.style.left = ballLeft + speedThree + "px";
         }
         if (!rightBallThree && upBallThree) {
-    
+
             ballThree.style.top = ballTop - speedThree + "px";
             ballThree.style.left = ballLeft - speedThree + "px";
         }
         if (rightBallThree && !upBallThree) {
-    
+
             ballThree.style.top = ballTop + speedThree + "px";
             ballThree.style.left = ballLeft + speedThree + "px";
         }
         if (!rightBallThree && !upBallThree) {
-    
+
             ballThree.style.top = ballTop + speedThree + "px";
             ballThree.style.left = ballLeft - speedThree + "px";
         }
-    
+
         if (ballBoundsTop <= borderBounds.top) {
             leftRightBallThree = Math.floor(Math.random() * 2);
             rightBallThree = leftRightBallThree ? true : false;
             upBallThree = false;
         }
         if (ballBoundsButtom >= borderBounds.bottom) {
-            leftRightBallThree = Math.floor(Math.random() * 2)+1;
+            leftRightBallThree = Math.floor(Math.random() * 2) + 1;
             rightBallThree = leftRightBallThree ? true : false;
             upBallThree = true;
         }
@@ -350,6 +367,6 @@ function startThree(){
             upDownBallThree = Math.floor(Math.random() * 2);
             upBallThree = upDownBallThree ? true : false;
         }
-    
-    },20)
+
+    }, 20)
 }

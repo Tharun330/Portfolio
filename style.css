@@ -302,6 +302,25 @@ div #sidebar li{
     font-size: 100%;
 
 }
+.openScreen {
+    background-color: rgba(0, 0, 0, .7);
+  
+
+    
+}
+.invisibleText{
+    font-size: 4rem;
+    font-family: "Josefin Sans", sans-serif;
+    color: #f3f3f3;
+    text-align: center;
+    text-justify: center;
+    position: relative;
+    top: 19rem;
+    display: none;
+}
+.visibleText{
+    display: block;
+}
 
 
 
