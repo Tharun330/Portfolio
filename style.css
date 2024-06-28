@@ -29,7 +29,7 @@ html {
 
     border: 1px black;
     border-radius: 20px;
-    background-color: #f3f3f3;
+    background-color: rgb(rgb(207, 197, 197), rgb(215, 230, 215), rgb(231, 231, 237));
     box-shadow: 2px 4px 8px black;
     transition: .2s;
     /* justify-content: center;
@@ -272,19 +272,24 @@ div #sidebar li{
     cursor: pointer;
     overflow: hidden;
     font-size: 0%;
+    padding: 5px 5px 5px 5px ;
+  
     
 }
 .closeButton{
     color: white;
-    position: relative;
+    /* position: relative; */
      /* top: 10px; */
-    left :1460px ;
-    top : -35px;
+    /* left :1460px ;
+    top : -35px; */
+    padding: 2px;
+    margin-top: 20px;
+    margin-right: 20px;
     cursor: pointer;
 }
 .info_head{
-    margin-left: 10px;
-    margin-top: 5px;
+    margin-left: 20px;
+    margin-top: 20px;
 }
 .ballHidden{
     display: none;
@@ -294,12 +299,16 @@ div #sidebar li{
     height: 95vh;
     width: 100%;
     border: 2px solid black;
-    background-color: black;
+    background-color: rgb(26, 26, 26);
     border-radius: 20px;
 
     transition: 1s;
     color: white;
     font-size: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    
 
 }
 .openScreen {
@@ -322,6 +331,71 @@ div #sidebar li{
     display: block;
 }
 
+.boxHeading{
+    display: flex;
+    justify-content: space-between;
+}
+
+.skillsBoxContainer{
+    height: 500px;
+    width: 80%px;
+    display: none;
+    justify-content: space-around;
+    align-items: center;
+    background-color: rgb(26, 26, 26);
+    border: 1px soild;
+    position: relative;
+    top: -80px;
+
+}
+.skillsBoxContainerVisible{
+    display: flex;
+}
+.skillBox{
+    height: 400px;
+    width: 320px;
+    /* border: 2px solid ; */
+    background-color: #f3f3f3;
+    border-radius: 20px;
+   
+
+}
+.frontEndHead{
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    padding: 5px;
+    background-color: cadetblue;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+}
+.frontEndHead h3{
+    font-size: medium;
+}
+.frontEndHead i{
+    font-size: 2rem;
+}
+
+.skillsList{
+    display: flex;
+    justify-content: center;
+   
+    padding: 1rem;
+}
+.skillsList ul{
+    padding: 10px;
+}
+.skillsList ul li{
+    list-style-type: none;
+    color: black;
+    margin: 5px;
+    font-size: 1.2rem;
+    text-align: center;
+
+}
 
 
 

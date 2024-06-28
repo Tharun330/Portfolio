@@ -6,6 +6,7 @@ let closeBtn = document.querySelector(".closeButton");
 let closeBtnTwo = document.querySelector("#ballTwoClose");
 let closeBtnThree = document.querySelector("#ballThreeClose");
 let invisibleText = document.querySelector(".invisibleText");
+let skillsBoxContainer = document.querySelector(".skillsBoxContainer");
 
 
 
@@ -137,6 +138,7 @@ closeBtnThree.addEventListener('click', (evt) => {
 function ballExpand(ball) {
     ball.setAttribute("class", "big_card");
     ballHeading.classList.add("info_head");
+    skillsBoxContainer.classList.add("skillsBoxContainerVisible");
 }
 
 //FUNCTION TO RESHAPE TO BALL
@@ -144,6 +146,7 @@ function originalShape() {
     ballOne.setAttribute("class", "ball");
     ballTwo.setAttribute("class", "ball");
     ballThree.setAttribute("class", "ball");
+    skillsBoxContainer.classList.remove("skillsBoxContainerVisible");
 }
 
 
