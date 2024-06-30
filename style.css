@@ -335,6 +335,11 @@ div #sidebar li{
     display: flex;
     justify-content: space-between;
 }
+#ballOne h2{
+    font-size: 1.8rem;
+   
+}
+
 
 .skillsBoxContainer{
     height: 500px;
@@ -395,6 +400,73 @@ div #sidebar li{
     font-size: 1.2rem;
     text-align: center;
 
+}
+.ballTwoHeading{
+    display: flex;
+    justify-content: space-between;
+}
+#ballTwo h2{
+    font-size: 1.8rem;
+    margin-left: 20px;
+}
+
+.experienceBoxContainer{
+    height: 500px;
+    width: 90%;
+    background-color: antiquewhite;
+    position: relative;
+    top: -80px;
+    left: 80px;
+    border-radius: 20px;
+    display: none;
+    justify-content: space-between;
+}
+.experienceBoxContainerVisible{
+    display: flex;
+}
+.experienceBoxContainer img{
+    /* margin-top: 0px; */
+     height: 450px;
+    width: 450px;
+    
+
+}
+.badgeBox{
+
+    width: 40%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.aboutBox{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+    color: rgb(26, 26, 26);
+   
+    padding: 3px ;
+}
+.experienceBoxContainer p{
+    font: bolder;
+    margin-bottom: 1px;
+}
+.expOne{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 5px;
+   
+}
+.expTwo{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 5px;
+   
 }
 
 

@@ -2,11 +2,13 @@ let card = document.querySelector(".card_one");
 let info_text = document.querySelector(".info");
 let card_one_h1 = document.querySelector(".info_head");
 let ballHeading = document.querySelector("#ballOne h2");
+let ballTwoHeading = document.querySelector("#ballTwo h2")
 let closeBtn = document.querySelector(".closeButton");
 let closeBtnTwo = document.querySelector("#ballTwoClose");
 let closeBtnThree = document.querySelector("#ballThreeClose");
 let invisibleText = document.querySelector(".invisibleText");
 let skillsBoxContainer = document.querySelector(".skillsBoxContainer");
+let experienceBoxContainer = document.querySelector(".experienceBoxContainer");
 
 
 
@@ -46,6 +48,7 @@ ballOne.addEventListener('click', () => {
 
     ballExpand(ballOne);
     ballsHidden(ballTwo, ballThree);
+    skillsBoxContainer.classList.add("skillsBoxContainerVisible");
     console.log("expanded");
     clearInterval();
 
@@ -62,6 +65,7 @@ closeBtn.addEventListener('click', (evt) => {
     console.log("x clicked")
 
     originalShape();
+    skillsBoxContainer.classList.remove("skillsBoxContainerVisible");
 
     speed = 3.6;
     speedTwo = 4;
@@ -77,6 +81,8 @@ ballTwo.addEventListener('click', () => {
 
     ballExpand(ballTwo);
     ballsHidden(ballOne, ballThree);
+    ballTwoHeading.classList.add("info_head");
+    experienceBoxContainer.classList.add("experienceBoxContainerVisible");
     console.log("expanded");
     clearInterval();
 
@@ -93,6 +99,8 @@ closeBtnTwo.addEventListener('click', (evt) => {
     console.log("x clicked")
 
     originalShape();
+    ballTwoHeading.classList.remove("info_head");
+    experienceBoxContainer.classList.remove("experienceBoxContainerVisible");
 
     speed = 3.6;
     speedTwo = 4;
@@ -138,7 +146,7 @@ closeBtnThree.addEventListener('click', (evt) => {
 function ballExpand(ball) {
     ball.setAttribute("class", "big_card");
     ballHeading.classList.add("info_head");
-    skillsBoxContainer.classList.add("skillsBoxContainerVisible");
+    
 }
 
 //FUNCTION TO RESHAPE TO BALL
@@ -146,7 +154,7 @@ function originalShape() {
     ballOne.setAttribute("class", "ball");
     ballTwo.setAttribute("class", "ball");
     ballThree.setAttribute("class", "ball");
-    skillsBoxContainer.classList.remove("skillsBoxContainerVisible");
+   
 }
 
 
