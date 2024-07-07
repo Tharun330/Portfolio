@@ -9,6 +9,12 @@ let closeBtnThree = document.querySelector("#ballThreeClose");
 let invisibleText = document.querySelector(".invisibleText");
 let skillsBoxContainer = document.querySelector(".skillsBoxContainer");
 let experienceBoxContainer = document.querySelector(".experienceBoxContainer");
+let ballThreeH2 = document.querySelector("#ballThree h2");
+let ballThreeClose = document.querySelector("#ballThreeClose");
+let ballThreeHeading = document.querySelector("#ballThreeHeading");
+let ballThree_info = document.querySelector(".ballThree_info");
+
+
 
 
 
@@ -115,6 +121,9 @@ ballThree.addEventListener('click', () => {
 
     ballExpand(ballThree);
     ballsHidden(ballOne, ballTwo);
+    ballThreeH2.classList.add("hideBallThreeH2");
+    ballThreeHeading.classList.add("ballThreeHeading");
+    ballThree_info.classList.add("ballThree-info-visible");
     console.log("expanded");
     clearInterval();
 
@@ -131,6 +140,9 @@ closeBtnThree.addEventListener('click', (evt) => {
     console.log("x clicked")
 
     originalShape();
+    ballThreeH2.classList.remove("hideBallThreeH2");
+    ballThreeHeading.classList.remove("ballThreeHeading");
+    ballThree_info.classList.remove("ballThree-info-visible");
 
     speed = 3.6;
     speedTwo = 4;

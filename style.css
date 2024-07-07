@@ -469,7 +469,117 @@ div #sidebar li{
    
 }
 
+/* BALLTHREE */
+.hideBallThreeH2{
+    display: none;
+}
+.ballThreeHeading{
+    display: flex;
+     justify-content: right ;
+}
 
+.ballThree_info{
+    height: 600px;
+    width: 100%;
+    background-color:rgb(26, 26, 26);
+     display: none;
+     justify-content: center;
+    flex: 1;
+    border-radius: 20px;
+    
+}
+.ballThree-info-visible{
+    display: flex;
+}
+.ballThree-info-One{
+  
+    height: 300px;
+    width: 200px;
+    background-color:  #F4F7F5;
+    /* margin-right: 5px; */
+    margin-top: 50px;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    padding-top: 10px;
+    position: relative;
+    top: 100px;
+    left: 100px;
+}
+.ballThree-info-One ul{
+   padding: 8px 0px 0px 0px;
+}
+.ballThree-info-One li{
+    color: rgb(26, 26, 26);
+    list-style-type: none;
+    font-size: 1.2rem;
+    font-weight: 900;
+    text-align: center;
+}
+.ballThree-info-Two{
+    height: 500px;
+    width: 1100px;
+    background-color: #EFE6DD;
+    margin-right: 80px;
+    margin-top: 50px;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items:center ;
+}
+/* .Education_section{
+    margin-left: 200px;
+} */
+.education_container{
+    row-gap: 4rem;
+    color: black;
+}
+.education_content{
+    display: grid;
+    grid-template-columns: 1fr max-content 1fr;
+    margin-bottom: 30px;
+}
+.education_year, .education_race{
+    font-size: 2rem;
+    margin-bottom: .25rem;
+}
+
+.education_university, .education_speciality{
+    display: block;
+    font-size:1rem;
+}
+.education_year, .education_university{
+    text-align: right;
+}
+.education_time{
+    padding: 0 1rem;
+    justify-self: center;
+}
+.education_rounder{
+    position: relative;
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    background-color: #BB4430;
+    border-radius: 50%;
+
+}
+.education_rounder::before{
+    content: "";
+    position:absolute;
+    transform: translate(-4px,-4px);
+    width: 20px;
+    height: 20px;
+    border: 1px solid #BB4430;
+    border-radius: 50%;
+}
+.education_line{
+    display: block;
+    height: 90%;
+    width: 2px;
+    background-color: #BB4430;
+    transform: translate(5px,-2px);
+}
 
 /* Page-1 CSS code for mobile view */
 /* START */
